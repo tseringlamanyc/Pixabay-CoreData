@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Favorites" representedClassName=".Favorites" syncable="YES">
+        <attribute name="photos" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="favorites" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="favorites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Favorites" inverseName="user" inverseEntity="Favorites"/>
+    </entity>
+    <elements>
+        <element name="Favorites" positionX="276.0234375" positionY="-2.453125" width="128" height="73"/>
+        <element name="User" positionX="-54" positionY="0" width="128" height="73"/>
+    </elements>
 </model>
