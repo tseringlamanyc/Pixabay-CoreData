@@ -68,4 +68,13 @@ class CoreDataManager {
         return favs
     }
     
+    public func deleteFavorite(favorite: Favorites) {
+        context.delete(favorite)
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed to delete favroties: \(error)")
+        }
+    }
 }

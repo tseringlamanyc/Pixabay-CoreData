@@ -24,14 +24,17 @@ class CreateVC: UIViewController {
     
     
     @IBAction func createPressed(_ sender: UIButton) {
+        
         guard let userName = userNameTF.text, !userName.isEmpty else {
             showAlert(title: "Error", message: "Please enter a username")
             return
         }
         
         let createdUser = CoreDataManager.shared.createNewUser(name: userName)
+        showAlert(title: "Success", message: "Account created")
+        
         delegate?.userCreated(user: createdUser, vc: self)
-        dismiss(animated: true)
+        
     }
     
 }

@@ -50,14 +50,14 @@ class SearchVC: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "first" {
-            guard let detailVC = segue.destination as? DetailVC, let indexpath = searchCV.indexPathsForSelectedItems?.first else {
-                fatalError()
-            }
-            detailVC.aPhoto = searchImages[indexpath.row]
-        }
-   }
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "first" {
+             guard let detailVC = segue.destination as? DetailVC, let indexpath = searchCV.indexPathsForSelectedItems?.first else {
+                 fatalError()
+             }
+             detailVC.aPhoto = searchImages[indexpath.row]
+         }
+    }
 }
 
 extension SearchVC: UISearchBarDelegate {
