@@ -18,22 +18,39 @@ class DetailVC: UIViewController {
     @IBOutlet weak var tags: UILabel!
     @IBOutlet weak var url: UILabel!
     
-    private var aPhoto: Photos
-    
-    init?(coder: NSCoder, photo: Photos) {
-        self.aPhoto = photo
-        super.init(coder:coder)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+    public var aPhoto: Photos?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
     }
+    
+    func updateUI() {
+        guard let aPhoto = aPhoto else {
+            return 
+        }
+        detailImage.getImage(with: aPhoto.largeImageURL) { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                print("\(appError)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.detailImage.image = image
+                }
+            }
+        }
+        
+        
+        likes.text = "Likes: \(aPhoto.likes.description)"
+        views.text = "Views: \(aPhoto.views.description)"
+        downloads.text = "Downloads: \(aPhoto.downloads.description)"
+        tags.text = "Tags: \(aPhoto.tags ?? "N/A")"
+        url.text = "PageURL: \(aPhoto.pageURL)"
+        
+    }
+    
 
     @IBAction func favPressed(_ sender: UIBarButtonItem) {
+        
     }
 }

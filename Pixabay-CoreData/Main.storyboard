@@ -78,7 +78,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="photoSearchBar" destination="gMS-Zj-0ID" id="hPQ-sC-dyK"/>
-                        <outlet property="searchCV" destination="ZMX-d2-Wgh" id="395-yT-iWA"/>
+                        <outlet property="searchCV" destination="ZMX-d2-Wgh" id="lSG-MH-S5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -210,7 +210,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="favoriteCV" destination="Bkg-ny-DSS" id="PhN-RA-Svi"/>
+                        <outlet property="favoriteCV" destination="Bkg-ny-DSS" id="K1V-Ic-FMj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6S-AA-FM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,7 +235,7 @@
         <!--DetailVC-->
         <scene sceneID="faJ-Y4-o14">
             <objects>
-                <viewController id="QDr-ji-ybI" customClass="DetailVC" customModule="Pixabay_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="QDr-ji-ybI" customClass="DetailVC" customModule="Pixabay_CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0eO-Yv-S0Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
