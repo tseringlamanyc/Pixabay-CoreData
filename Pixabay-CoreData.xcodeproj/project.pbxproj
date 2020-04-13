@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52205CCB2444CE9900DBE0DA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52205CCA2444CE9900DBE0DA /* Secrets.swift */; };
 		527C35142441488D00C1E02B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527C35132441488D00C1E02B /* AppDelegate.swift */; };
 		527C35162441488D00C1E02B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527C35152441488D00C1E02B /* SceneDelegate.swift */; };
 		527C35182441488D00C1E02B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527C35172441488D00C1E02B /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52205CCA2444CE9900DBE0DA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		527C35102441488D00C1E02B /* Pixabay-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixabay-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527C35132441488D00C1E02B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527C35152441488D00C1E02B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52205CC92444CE8B00DBE0DA /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				52205CCA2444CE9900DBE0DA /* Secrets.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		52205CCC2444CED800DBE0DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52205CCD2444CEE100DBE0DA /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		52205CCE2444CF0B00DBE0DA /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				527C35132441488D00C1E02B /* AppDelegate.swift */,
+				527C35152441488D00C1E02B /* SceneDelegate.swift */,
+				527C35212441489000C1E02B /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		52205CCF2444CF1400DBE0DA /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				527C35172441488D00C1E02B /* ViewController.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		52205CD02444CF2000DBE0DA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		527C35072441488D00C1E02B = {
 			isa = PBXGroup;
 			children = (
@@ -58,12 +107,14 @@
 		527C35122441488D00C1E02B /* Pixabay-CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				527C35132441488D00C1E02B /* AppDelegate.swift */,
-				527C35152441488D00C1E02B /* SceneDelegate.swift */,
-				527C35172441488D00C1E02B /* ViewController.swift */,
+				52205CD02444CF2000DBE0DA /* CoreData */,
+				52205CCF2444CF1400DBE0DA /* VC */,
+				52205CCD2444CEE100DBE0DA /* API */,
+				52205CCC2444CED800DBE0DA /* Model */,
+				52205CC92444CE8B00DBE0DA /* Secrets */,
+				52205CCE2444CF0B00DBE0DA /* Supporting */,
 				527C35192441488D00C1E02B /* Main.storyboard */,
 				527C351F2441489000C1E02B /* Assets.xcassets */,
-				527C35212441489000C1E02B /* LaunchScreen.storyboard */,
 				527C35242441489000C1E02B /* Info.plist */,
 				527C351C2441488D00C1E02B /* Pixabay_CoreData.xcdatamodeld */,
 			);
@@ -142,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				527C35182441488D00C1E02B /* ViewController.swift in Sources */,
+				52205CCB2444CE9900DBE0DA /* Secrets.swift in Sources */,
 				527C351E2441488D00C1E02B /* Pixabay_CoreData.xcdatamodeld in Sources */,
 				527C35142441488D00C1E02B /* AppDelegate.swift in Sources */,
 				527C35162441488D00C1E02B /* SceneDelegate.swift in Sources */,
