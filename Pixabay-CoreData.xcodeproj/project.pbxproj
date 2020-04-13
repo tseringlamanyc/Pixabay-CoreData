@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		52205CCB2444CE9900DBE0DA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52205CCA2444CE9900DBE0DA /* Secrets.swift */; };
 		52205CD22444CFF600DBE0DA /* PIxabay-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52205CD12444CFF600DBE0DA /* PIxabay-Model.swift */; };
+		52205CD42444D06E00DBE0DA /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52205CD32444D06E00DBE0DA /* UIAlert.swift */; };
 		527C35142441488D00C1E02B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527C35132441488D00C1E02B /* AppDelegate.swift */; };
 		527C35162441488D00C1E02B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527C35152441488D00C1E02B /* SceneDelegate.swift */; };
 		527C35182441488D00C1E02B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527C35172441488D00C1E02B /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		52205CCA2444CE9900DBE0DA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		52205CD12444CFF600DBE0DA /* PIxabay-Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PIxabay-Model.swift"; sourceTree = "<group>"; };
+		52205CD32444D06E00DBE0DA /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
 		527C35102441488D00C1E02B /* Pixabay-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixabay-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527C35132441488D00C1E02B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527C35152441488D00C1E02B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				527C35132441488D00C1E02B /* AppDelegate.swift */,
 				527C35152441488D00C1E02B /* SceneDelegate.swift */,
 				527C35212441489000C1E02B /* LaunchScreen.storyboard */,
+				52205CD32444D06E00DBE0DA /* UIAlert.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				52205CCB2444CE9900DBE0DA /* Secrets.swift in Sources */,
 				527C351E2441488D00C1E02B /* Pixabay_CoreData.xcdatamodeld in Sources */,
 				527C35142441488D00C1E02B /* AppDelegate.swift in Sources */,
+				52205CD42444D06E00DBE0DA /* UIAlert.swift in Sources */,
 				527C35162441488D00C1E02B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
