@@ -18,20 +18,29 @@ class SearchVC: UIViewController {
         photoSearchBar.delegate = self
         searchCV.dataSource = self
         searchCV.delegate = self
+        loadUsers()
     }
     
     public var searchImages = [Photos]() {
         didSet {
             DispatchQueue.main.async {
                 self.searchCV.reloadData()
-                if self.searchImages.isEmpty {
-                    self.searchCV.backgroundView = EmptyView(title: "No favorites", message: "Add favorites")
-                } else {
-                    self.searchCV.backgroundView = nil
-                }
             }
         }
     }
+    
+    public var currentUser: User?
+    
+    private var allUsers = [User]() {
+        didSet {
+            currentUser = allUsers.last
+        }
+    }
+    
+    private func loadUsers() {
+         allUsers = CoreDataManager.shared.fetchUsers()
+     }
+     
     
     public var currentSearch = "" {
         didSet {
@@ -56,6 +65,7 @@ class SearchVC: UIViewController {
                  fatalError()
              }
              detailVC.aPhoto = searchImages[indexpath.row]
+            detailVC.currentUser = currentUser
          }
     }
 }

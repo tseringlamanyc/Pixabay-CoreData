@@ -14,20 +14,25 @@ class FavoritesVC: UIViewController {
     
     public var currentUser: User? {
         didSet {
-            navigationController?.title = currentUser?.name ?? "no user"
-            allFavorites = CoreDataManager.shared.fetchFavorites(user: currentUser)
+            title = "\(currentUser?.name ?? "No User")'s Favorites"
         }
     }
     
     private var allFavorites = [Favorites]() {
         didSet {
             favoriteCV.reloadData()
+            if allFavorites.isEmpty {
+                favoriteCV.backgroundView = EmptyView(title: "No items", message: "No favorites yet")
+            } else {
+                favoriteCV.backgroundView = nil 
+            }
         }
     }
     
     private var allUsers = [User]() {
         didSet {
             currentUser = allUsers.last
+             allFavorites = CoreDataManager.shared.fetchFavorites(user: currentUser)
         }
     }
     
@@ -36,7 +41,6 @@ class FavoritesVC: UIViewController {
         favoriteCV.dataSource = self
         favoriteCV.delegate = self
         loadFavs()
-        dump(currentUser)
     }
     
     private func loadFavs() {
@@ -53,8 +57,8 @@ class FavoritesVC: UIViewController {
              guard let detailVC = segue.destination as? DetailVC, let indexpath = favoriteCV.indexPathsForSelectedItems?.first else {
                  fatalError()
              }
-            detailVC.currentUser = currentUser
             detailVC.aFavorite = allFavorites[indexpath.row]
+            detailVC.favButton.isEnabled = false 
         }
     }
 }
@@ -66,7 +70,7 @@ extension FavoritesVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? FavCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favCell", for: indexPath) as? FavCell else {
             fatalError()
         }
         let aFav = allFavorites[indexPath.row]

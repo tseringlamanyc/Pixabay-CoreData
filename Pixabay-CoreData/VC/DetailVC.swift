@@ -23,21 +23,18 @@ class DetailVC: UIViewController {
     public var aFavorite: Favorites?
     
     public var currentUser: User?
-    
-    private var isFavorite = false {
-        didSet {
-            if isFavorite {
-                favButton.image = UIImage(systemName: "heart.fill")
-            } else {
-                favButton.image = UIImage(systemName: "heart")
-            }
-        }
-    }
+        
+    private var allUsers = [User]() 
         
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         updateFavorites()
+        loadUsers()
+    }
+    
+    private func loadUsers() {
+        allUsers = CoreDataManager.shared.fetchUsers()
     }
     
     func updateUI() {
@@ -83,14 +80,9 @@ class DetailVC: UIViewController {
         
         guard let aPhoto = aPhoto, let currentUser = currentUser else {return}
         
-        print("Pressed")
+        _ = CoreDataManager.shared.saveFavorite(photo: aPhoto.largeImageURL, user: currentUser)
         
-        if isFavorite {
-            _ = CoreDataManager.shared.saveFavorite(photo: aPhoto.largeImageURL, user: currentUser)
-            showAlert(title: "Success", message: "Added to favorites")
-        } else {
-            CoreDataManager.shared.deleteFavorite(favorite: CoreDataManager.shared.saveFavorite(photo: aPhoto.largeImageURL, user: currentUser))
-            showAlert(title: "Deleted", message: "Photo deleted")
-        }
+        showAlert(title: "Success", message: "Favorite Saved")
+        
     }
 }
