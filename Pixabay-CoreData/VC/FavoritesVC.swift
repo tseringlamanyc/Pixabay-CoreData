@@ -32,7 +32,6 @@ class FavoritesVC: UIViewController {
     private var allUsers = [User]() {
         didSet {
             currentUser = allUsers.last
-             allFavorites = CoreDataManager.shared.fetchFavorites(user: currentUser)
         }
     }
     
@@ -45,6 +44,7 @@ class FavoritesVC: UIViewController {
     
     private func loadFavs() {
         allUsers = CoreDataManager.shared.fetchUsers()
+        allFavorites = CoreDataManager.shared.fetchFavorites(user: currentUser)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

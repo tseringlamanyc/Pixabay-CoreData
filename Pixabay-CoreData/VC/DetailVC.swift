@@ -23,9 +23,13 @@ class DetailVC: UIViewController {
     public var aFavorite: Favorites?
     
     public var currentUser: User?
-        
-    private var allUsers = [User]() 
-        
+    
+    private var allUsers = [User]() {
+        didSet {
+            currentUser = allUsers.last
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -75,7 +79,7 @@ class DetailVC: UIViewController {
         }
     }
     
-
+    
     @IBAction func favPressed(_ sender: UIBarButtonItem) {
         
         guard let aPhoto = aPhoto, let currentUser = currentUser else {return}
