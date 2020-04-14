@@ -58,7 +58,7 @@ class FavoritesVC: UIViewController {
                  fatalError()
              }
             detailVC.aFavorite = allFavorites[indexpath.row]
-            detailVC.favButton.isEnabled = false 
+            detailVC.favButton.isEnabled = false
         }
     }
 }

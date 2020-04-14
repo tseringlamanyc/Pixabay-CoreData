@@ -77,6 +77,12 @@ class DetailVC: UIViewController {
                 }
             }
         }
+        
+        likes.text = "\(currentUser?.name ?? "No User")'s Favorites"
+        views.isHidden = true
+        downloads.isHidden = true
+        tags.isHidden = true
+        url.isHidden = true
     }
     
     
